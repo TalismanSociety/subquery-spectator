@@ -3,7 +3,7 @@ description: Substrate slots auction data collector
 repository: git@github.com:subvis-io/subquery-spectator.git
 schema: ./schema.graphql
 network:
-  endpoint: wss://kusama.api.onfinality.io/public-ws
+  endpoint: wss://polkadot.api.onfinality.io/public-ws
   # endpoint: wss://kusama-rpc.polkadot.io/
   # endpoint: wss://rococo-rpc.polkadot.io/
   # endpoint: wss://rococo.aresprotocol.com
@@ -48,3 +48,15 @@ dataSources:
         #     method: Deposit
         # - handler: handleCall
         #   kind: substrate/CallHandler
+
+  - name: PolkadotRuntime
+    kind: substrate/Runtime
+    filter:
+      specName: polkadot
+    startBlock: 9702840
+    mapping:
+      handlers:
+      - handler: handleBlock
+        kind: substrate/BlockHandler
+      - handler: handleEvent
+        kind: substrate/EventHandler
