@@ -12,54 +12,32 @@ network:
   # Optionally provide the HTTP endpoint of a full chain dictionary to speed up processing
   dictionary: "https://api.subquery.network/sq/subquery/dictionary-polkadot"
 
-# definitions:
-#   - mapping: &fnMapping
-#     handlers: 
-#       - handler: handleBlock
-#         kind: substrate/BlockHandler
-#       - handler: handleEvent
-#         kind: substrate/EventHandler
-
+definitions:
+  mapping: &fnmapping
+    handlers:
+      - handler: handleBlock
+        kind: substrate/BlockHandler
+      - handler: handleEvent
+        kind: substrate/EventHandler
 
 dataSources:
-  - name: RococoRuntime
+  - name: rococoRuntime
     kind: substrate/Runtime
-    filter: 
+    filter:
       specName: rococo
     startBlock: 357245
-    mapping: 
-      handlers: 
-      - handler: handleBlock
-        kind: substrate/BlockHandler
-      - handler: handleEvent
-        kind: substrate/EventHandler
+    mapping: *fnmapping
 
-  - name: KusamaRuntime
+  - name: kusamaRuntime
     kind: substrate/Runtime
-    filter: 
+    filter:
       specName: kusama
     startBlock: 7828000 #8231811 #7828000
-    mapping:
-      handlers: 
-      - handler: handleBlock
-        kind: substrate/BlockHandler
-      - handler: handleEvent
-        kind: substrate/EventHandler
-        
-        #   filter:
-        #     module: balances
-        #     method: Deposit
-        # - handler: handleCall
-        #   kind: substrate/CallHandler
+    mapping: *fnmapping
 
-  - name: PolkadotRuntime
+  - name: polkadotRuntime
     kind: substrate/Runtime
     filter:
       specName: polkadot
     startBlock: 1
-    mapping:
-      handlers:
-      - handler: handleBlock
-        kind: substrate/BlockHandler
-      - handler: handleEvent
-        kind: substrate/EventHandler
+    mapping: *fnmapping
