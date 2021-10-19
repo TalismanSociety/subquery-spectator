@@ -9,6 +9,9 @@ network:
   # endpoint: wss://rococo.aresprotocol.com
   # endpoint: wss://node-6793473089227190272.jm.onfinality.io/ws?apikey=2c3f93ff-c795-47ce-8c63-9ede23ba6a66
 
+  # Optionally provide the HTTP endpoint of a full chain dictionary to speed up processing
+  dictionary: "https://api.subquery.network/sq/subquery/dictionary-polkadot"
+
 # definitions:
 #   - mapping: &fnMapping
 #     handlers: 
