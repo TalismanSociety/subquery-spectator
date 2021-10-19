@@ -31,7 +31,7 @@
     "typescript": "^4.1.3"
   },
   "resolutions": {
-    "@polkadot/api": "4.17.1",
+    "@polkadot/api": "6.2.1",
     "@subql/node": "^0.20.3"
   },
   "dependencies": {
