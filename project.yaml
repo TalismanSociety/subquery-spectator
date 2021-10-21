@@ -39,5 +39,5 @@ dataSources:
     kind: substrate/Runtime
     filter:
       specName: polkadot
-    startBlock: 1
+    startBlock: 7353300
     mapping: *fnmapping
