@@ -3,7 +3,8 @@ description: Substrate slots auction data collector
 repository: git@github.com:subvis-io/subquery-spectator.git
 schema: ./schema.graphql
 network:
-  endpoint: wss://kusama.api.onfinality.io/public-ws
+  # endpoint: wss://kusama.api.onfinality.io/public-ws
+  endpoint: wss://polkadot.api.onfinality.io/public-ws
   # endpoint: wss://kusama-rpc.polkadot.io/
   # endpoint: wss://rococo-rpc.polkadot.io/
   # endpoint: wss://rococo.aresprotocol.com
